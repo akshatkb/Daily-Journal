@@ -1,0 +1,81 @@
+<div class="auth-page">
+  <div class="auth-card">
+
+    <div class="auth-brand">
+      <span class="brand-icon">✍</span>
+      <span class="brand-name">Daily Journal</span>
+    </div>
+
+    <h1 class="auth-title">Create your account</h1>
+    <p class="auth-subtitle">Your private journal awaits</p>
+
+    <div class="error-banner" *ngIf="error">
+      <span>⚠</span> {{ error }}
+    </div>
+
+    <div class="form-group">
+      <label for="name">Full name</label>
+      <input
+        id="name"
+        type="text"
+        [(ngModel)]="name"
+        placeholder="Jane Doe"
+        autocomplete="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        [(ngModel)]="email"
+        placeholder="you@example.com"
+        autocomplete="email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">
+        Password
+        <span class="strength-pill" [class]="passwordStrength" *ngIf="password.length > 0">
+          {{ passwordStrength }}
+        </span>
+      </label>
+      <div class="input-wrap">
+        <input
+          id="password"
+          [type]="showPassword ? 'text' : 'password'"
+          [(ngModel)]="password"
+          placeholder="At least 6 characters"
+          autocomplete="new-password"
+        />
+        <button class="toggle-pw" type="button" (click)="showPassword = !showPassword">
+          {{ showPassword ? '🙈' : '👁' }}
+        </button>
+      </div>
+    </div>
+
+    <div class="form-group" [class.has-error]="passwordMismatch">
+      <label for="confirmPassword">Confirm password</label>
+      <input
+        id="confirmPassword"
+        type="password"
+        [(ngModel)]="confirmPassword"
+        placeholder="Repeat your password"
+        autocomplete="new-password"
+        [class.error]="passwordMismatch"
+      />
+      <span class="field-error" *ngIf="passwordMismatch">Passwords don't match.</span>
+    </div>
+
+    <button class="btn btn-primary btn-full" (click)="onSubmit()" [disabled]="loading || passwordMismatch">
+      {{ loading ? 'Creating account…' : 'Create account' }}
+    </button>
+
+    <p class="auth-switch">
+      Already have an account? <a routerLink="/login">Sign in</a>
+    </p>
+
+  </div>
+</div>

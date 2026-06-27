@@ -1,0 +1,37 @@
+$accent: #1abc9c;
+$accent-dark: #16a085;
+
+.contact-card {
+  max-width: 640px;
+  padding: 2rem 2.5rem;
+}
+
+.contact-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #3d3d4e;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $accent;
+  margin-bottom: 0.5rem;
+}
+
+.contact-email {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: $accent;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.15s;
+
+  &:hover {
+    color: $accent-dark;
+    transform: translateX(3px);
+  }
+}

@@ -1,0 +1,62 @@
+$accent: #1abc9c;
+$ink: #1a1a2e;
+$muted: #8a8a9a;
+$border: #e8e5de;
+
+.post-article {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.post-header {
+  padding: 2rem 0 1.5rem;
+
+  .back-link {
+    font-size: .82rem;
+    font-weight: 600;
+    color: $muted;
+    letter-spacing: .04em;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: color .2s;
+
+    &:hover { color: $accent; }
+  }
+
+  .post-meta-top {
+    time {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: $accent;
+      display: block;
+      margin-bottom: .65rem;
+    }
+  }
+
+  .post-heading {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    line-height: 1.2;
+  }
+}
+
+.post-body {
+  padding: 1.5rem 0;
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #3d3d4e;
+    margin-bottom: 1.25rem;
+
+    &:last-child { margin-bottom: 0; }
+  }
+}
+
+.post-footer {
+  display: flex;
+  gap: .75rem;
+  padding: 1rem 0 2rem;
+  flex-wrap: wrap;
+}

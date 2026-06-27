@@ -1,0 +1,42 @@
+<div class="page-wrapper">
+  <div class="page-title">
+    <div class="eyebrow">New Entry</div>
+    <h1>Write something</h1>
+    <p class="subtitle">Capture your thoughts. There's no wrong way to journal.</p>
+  </div>
+
+  <div class="compose-card card">
+    <div class="form-group" [class.has-error]="titleError">
+      <label for="title">Title</label>
+      <input
+        id="title"
+        type="text"
+        [(ngModel)]="title"
+        placeholder="Give your entry a title…"
+        [class.error]="titleError"
+        maxlength="120"
+      />
+      <span class="field-error" *ngIf="titleError">A title helps you find this later.</span>
+    </div>
+
+    <div class="form-group" [class.has-error]="contentError">
+      <label for="content">
+        Your entry
+        <span class="word-count" *ngIf="wordCount > 0">{{ wordCount }} words</span>
+      </label>
+      <textarea
+        id="content"
+        [(ngModel)]="content"
+        placeholder="What's on your mind today? Write freely…"
+        [class.error]="contentError"
+        rows="10"
+      ></textarea>
+      <span class="field-error" *ngIf="contentError">Your entry can't be empty.</span>
+    </div>
+
+    <div class="compose-actions">
+      <button class="btn btn-primary" (click)="onSubmit()">Publish Entry</button>
+      <button class="btn btn-ghost" type="button" (click)="onClear()">Clear</button>
+    </div>
+  </div>
+</div>

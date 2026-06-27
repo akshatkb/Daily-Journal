@@ -1,0 +1,50 @@
+<div class="page-wrapper">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="eyebrow">Your personal space to write</div>
+    <h1>What's on your mind today?</h1>
+    <p class="hero-text">{{ homeContent }}</p>
+    <a routerLink="/compose" class="btn btn-primary">Start writing</a>
+  </section>
+
+  <!-- <hr class="divider"> -->
+
+  <!-- Posts feed -->
+  <!-- <section class="feed">
+    <div class="feed-header">
+      <h2>Your Entries</h2>
+      <span class="tag">{{ posts.length }} {{ posts.length === 1 ? 'entry' : 'entries' }}</span>
+    </div> -->
+
+    <!-- Empty state -->
+    <!-- <div *ngIf="posts.length === 0" class="empty-state">
+      <div class="empty-icon">📓</div>
+      <h3>No entries yet</h3>
+      <p>Your journal is waiting. Write your first entry to get started.</p>
+      <a routerLink="/compose" class="btn btn-primary" style="margin-top:1rem">Write now</a>
+    </div> -->
+
+    <!-- Post cards -->
+    <!-- <div class="posts-grid" *ngIf="posts.length > 0">
+      <article class="card post-card" *ngFor="let post of posts">
+        <div class="post-meta">
+          <time class="post-date">{{ formatDate(post.createdAt) }}</time>
+        </div>
+        <a [routerLink]="['/post', getSlug(post)]" class="post-title-link">
+          <h3 class="post-title">{{ post.title }}</h3>
+        </a>
+        <p class="post-excerpt">{{ getExcerpt(post.content) }}</p>
+        <div class="post-actions">
+          <a [routerLink]="['/post', getSlug(post)]" class="read-more">
+            Read entry →
+          </a>
+          <button class="delete-btn" (click)="deletePost(post.id, $event)" title="Delete entry">
+            🗑
+          </button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</div> -->

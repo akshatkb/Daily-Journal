@@ -1,0 +1,54 @@
+<div class="auth-page">
+  <div class="auth-card">
+
+    <div class="auth-brand">
+      <span class="brand-icon">✍</span>
+      <span class="brand-name">Daily Journal</span>
+    </div>
+
+    <h1 class="auth-title">Welcome back</h1>
+    <p class="auth-subtitle">Sign in to your journal</p>
+
+    <div class="error-banner" *ngIf="error">
+      <span>⚠</span> {{ error }}
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        [(ngModel)]="email"
+        placeholder="you@example.com"
+        (keyup.enter)="onSubmit()"
+        autocomplete="email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="input-wrap">
+        <input
+          id="password"
+          [type]="showPassword ? 'text' : 'password'"
+          [(ngModel)]="password"
+          placeholder="Your password"
+          (keyup.enter)="onSubmit()"
+          autocomplete="current-password"
+        />
+        <button class="toggle-pw" type="button" (click)="showPassword = !showPassword">
+          {{ showPassword ? '🙈' : '👁' }}
+        </button>
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-full" (click)="onSubmit()" [disabled]="loading">
+      {{ loading ? 'Signing in…' : 'Sign in' }}
+    </button>
+
+    <p class="auth-switch">
+      Don't have an account? <a routerLink="/register">Create one</a>
+    </p>
+
+  </div>
+</div>

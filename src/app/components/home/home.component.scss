@@ -1,0 +1,120 @@
+$accent: #1abc9c;
+$accent-dark: #16a085;
+$ink: #1a1a2e;
+$muted: #8a8a9a;
+$border: #e8e5de;
+$surface: #ffffff;
+
+// ── Hero ────────────────────────────────────────────
+.hero {
+  padding: 3rem 0 2.5rem;
+
+  .eyebrow {
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: $accent;
+    margin-bottom: .75rem;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .hero-text {
+    color: $muted;
+    font-size: 1.05rem;
+    max-width: 580px;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+}
+
+// // ── Feed ─────────────────────────────────────────────
+// .feed {
+//   padding: 1.5rem 0 3rem;
+// }
+
+// .feed-header {
+//   display: flex;
+//   align-items: baseline;
+//   gap: .75rem;
+//   margin-bottom: 1.75rem;
+
+//   h2 { font-size: 1.4rem; }
+// }
+
+// // ── Posts grid ───────────────────────────────────────
+// .posts-grid {
+//   display: grid;
+//   gap: 1.25rem;
+// }
+
+// .post-card {
+//   position: relative;
+//   padding: 1.5rem 1.75rem;
+
+//   .post-meta {
+//     margin-bottom: .5rem;
+//   }
+
+//   .post-date {
+//     font-size: .75rem;
+//     font-weight: 500;
+//     letter-spacing: .06em;
+//     text-transform: uppercase;
+//     color: $muted;
+//   }
+
+//   .post-title-link {
+//     text-decoration: none;
+//     display: block;
+//     margin-bottom: .65rem;
+
+//     &:hover .post-title { color: $accent; }
+//   }
+
+//   .post-title {
+//     font-size: 1.2rem;
+//     font-family: 'Playfair Display', serif;
+//     color: $ink;
+//     transition: color .2s;
+//     margin: 0;
+//   }
+
+//   .post-excerpt {
+//     color: $muted;
+//     font-size: .95rem;
+//     line-height: 1.65;
+//     margin-bottom: 1.1rem;
+//   }
+
+//   .post-actions {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//   }
+
+//   .read-more {
+//     font-size: .85rem;
+//     font-weight: 600;
+//     color: $accent;
+//     letter-spacing: .02em;
+//     transition: gap .2s;
+
+//     &:hover { color: $accent-dark; }
+//   }
+
+//   .delete-btn {
+//     background: none;
+//     border: none;
+//     cursor: pointer;
+//     opacity: .3;
+//     font-size: 1rem;
+//     transition: opacity .2s;
+//     padding: .25rem;
+
+//     &:hover { opacity: .8; }
+//   }
+// }

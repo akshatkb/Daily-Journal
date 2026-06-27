@@ -1,0 +1,41 @@
+<header class="site-header" [class.scrolled]="scrolled">
+  <div class="header-inner">
+    <a class="brand" routerLink="/" (click)="closeMenu()">
+      <span class="brand-icon">✍</span>
+      <span class="brand-text">Daily Journal</span>
+    </a>
+
+    <ng-container *ngIf="auth.isLoggedIn()">
+      <nav class="nav-desktop">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        <a routerLink="/entries" routerLinkActive="active">Entries</a>
+        <a routerLink="/compose" routerLinkActive="active">Compose</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </nav>
+
+      <div class="user-area">
+        <div class="user-avatar" [title]="userName" (click)="toggleUserMenu($event)">{{ userInitial }}</div>
+        <!-- <span class="user-name">{{ userName }}</span> -->
+
+        <div class="user-dropdown" *ngIf="userMenuOpen">
+          <div class="user-fullname">{{ auth.currentUser()?.name }}</div>
+          <button class="btn-logout dropdown-logout" (click)="logout()">Sign out</button>
+        </div>
+      </div>
+    </ng-container>
+
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav class="nav-mobile" [class.open]="menuOpen" *ngIf="auth.isLoggedIn()">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">Home</a>
+    <a routerLink="/compose" routerLinkActive="active" (click)="closeMenu()">Compose</a>
+    <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+    <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
+    <button class="mobile-logout" (click)="logout()">Sign out</button>
+  </nav>
+</header>
